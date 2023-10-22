@@ -18,6 +18,7 @@ alias c=clear
 alias x='exit'
 alias ll='eza -la'
 
+alias hm='cd $HOME/.config/home-manager'
 alias hme='home-manager edit'
 alias hms='home-manager switch && source $HOME/.zshrc'
 
