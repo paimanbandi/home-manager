@@ -23,7 +23,9 @@ alias hme='home-manager edit'
 alias hms='home-manager switch && source $HOME/.zshrc'
 
 # neovim
-alias vn='cd $HOME/.config/home-manager/env/nvim/ && nvim init.lua'
+alias v='nvim'
+alias vc='nvim .'
+alias vn='nvim $HOME/.config/home-manager/env/nvim/init.lua'
 
 # zsh
 alias vz='nvim $HOME/.config/home-manager/env/.zshrc'
