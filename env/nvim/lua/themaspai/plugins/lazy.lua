@@ -12,7 +12,15 @@ end
 vim.opt.rtp:prepend(lazypath)
 
 require('lazy').setup({
-  -- Git related plugins
+  {
+    "pmizio/typescript-tools.nvim",
+    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
+  },
+  {
+    'weilbith/nvim-code-action-menu',
+    cmd = 'CodeActionMenu',
+  },
   'tpope/vim-fugitive',
   'tpope/vim-rhubarb',
 
@@ -161,4 +169,10 @@ require('lazy').setup({
   {
     'theHamsta/nvim-dap-virtual-text'
   },
+  {
+    'akinsho/toggleterm.nvim'
+  },
+  {
+    'windwp/nvim-autopairs'
+  }
 }, {})
