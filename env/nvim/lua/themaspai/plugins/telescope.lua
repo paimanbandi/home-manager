@@ -52,6 +52,7 @@ end, { desc = 'Debug: Set Breakpoint' })
 
 k.set('n', 'gr', require('telescope.builtin').lsp_references, { desc = '[g]oto [r]eferences' })
 k.set('n', 'gI', require('telescope.builtin').lsp_implementations, { desc = '[G]oto [I]mplementation' })
+k.set('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<cr>', { desc = '[G]oto [D]eclaration' })
 
 k.set('n', '<leader>D', vim.lsp.buf.type_definition, { desc = 'Type [D]efinition' })
 k.set('n', 'K', vim.lsp.buf.hover, { desc = 'Hover Documentation' })
