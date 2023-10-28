@@ -18,21 +18,24 @@ alias c=clear
 alias x='exit'
 alias ll='eza -la'
 
-alias hm='cd $HOME/.config/home-manager'
-alias hme='home-manager edit'
-alias hms='home-manager switch && source $HOME/.zshrc'
-
 # neovim
 alias v='nvim'
-alias vc='nvim .'
-alias vn='nvim $HOME/.config/home-manager/env/nvim/init.lua'
+alias vc='v .'
+alias vn='cd $HOME/.config/home-manager/env/nvim/ && v init.lua'
+
+# home-manager
+alias hm='cd $HOME/.config/home-manager'
+alias hme='home-manager edit'
+alias hms='home-manager switch && source $HOME/.zshrc && sudo chmod 777 $HOME/.config/nvim/lazy-lock.json'
+alias vh='v $HOME/.config/home-manager/home.nix'
+
 
 # zsh
-alias vz='nvim $HOME/.config/home-manager/env/.zshrc'
+alias vz='v $HOME/.config/home-manager/env/.zshrc'
 alias sz='source $HOME/.zshrc'
 
 # yabai
-alias vy='vim $HOME/.config/yabai'
+alias vy='v $HOME/.config/yabai'
 
 # kubectl
 #alias kubectl='HTTPS_PROXY=localhost:8888 kubectl'

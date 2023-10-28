@@ -15,6 +15,7 @@ in
   [
     zsh 
     neovim
+    neofetch
     bat
     eza
     git

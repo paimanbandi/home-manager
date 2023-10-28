@@ -7,7 +7,7 @@ require("toggleterm").setup({
     end
   end,
   open_mapping = [[\\]],
-  insert_mappings = false,
+  insert_mappings = true,
   terminal_mappings = true,
   -- on_open = fun(t: Terminal), -- function to run when the terminal opens
   -- on_close = fun(t: Terminal), -- function to run when the terminal closes

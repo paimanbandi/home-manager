@@ -14,6 +14,11 @@ o.updatetime = 250
 o.timeoutlen = 300
 o.completeopt = 'menuone,noselect'
 o.termguicolors = true
+o.foldcolumn = '1' -- '0' is not bad
+o.foldlevel = 99 -- Using ufo provider need a large value, feel free to decrease the value
+o.foldlevelstart = 99
+o.foldenable = true
+
 
 local wo = vim.wo
 wo.number = true
@@ -27,3 +32,4 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
+ 
