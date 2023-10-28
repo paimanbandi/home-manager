@@ -29,6 +29,7 @@ in
     ".zshrc".source = "${homeManagerPath}/.zshrc";
     ".config/nvim".source = "${homeManagerPath}/nvim";
     ".config/alacritty".source = "${homeManagerPath}/alacritty";
+    ".wezterm.lua".source = "${homeManagerPath}/.wezterm.lua";
   };
 
   programs.home-manager.enable = true;
