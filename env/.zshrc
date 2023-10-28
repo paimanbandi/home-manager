@@ -23,6 +23,9 @@ alias v='nvim'
 alias vc='v .'
 alias vn='cd $HOME/.config/home-manager/env/nvim/ && v init.lua'
 
+# alacritty
+alias va='v $HOME/.config/home-manager/env/alacritty/alacritty.yml'
+
 # home-manager
 alias hm='cd $HOME/.config/home-manager'
 alias hme='home-manager edit'

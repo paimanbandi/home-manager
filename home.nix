@@ -28,6 +28,7 @@ in
   home.file = {
     ".zshrc".source = "${homeManagerPath}/.zshrc";
     ".config/nvim".source = "${homeManagerPath}/nvim";
+    ".config/alacritty".source = "${homeManagerPath}/alacritty";
   };
 
   programs.home-manager.enable = true;
