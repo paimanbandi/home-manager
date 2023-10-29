@@ -21,4 +21,3 @@ r 'themaspai.plugins.nvim-blame-line'
 r 'themaspai.plugins.treejs'
 r 'themaspai.plugins.oil'
 r 'themaspai.plugins.zen-mode'
-
