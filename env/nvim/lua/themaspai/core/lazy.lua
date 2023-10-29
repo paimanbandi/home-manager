@@ -188,7 +188,6 @@ require('lazy').setup({
   {
     'tveskag/nvim-blame-line'
   },
-  {},
   {
     "kylechui/nvim-surround",
     version = "*",
@@ -197,16 +196,25 @@ require('lazy').setup({
   },
   {
   'Wansmer/treesj',
-  keys = { '<space>m', '<space>j', '<space>s' },
-  dependencies = { 'nvim-treesitter/nvim-treesitter' },
-  config = function()
-    require('treesj').setup({--[[ your config ]]})
-  end,
-},
+    keys = {
+      '<space>m',
+      '<space>j',
+      '<space>s',
+    },
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+    },
+    config = function()
+      require('treesj').setup({})
+    end,
+  },
   {
     'mg979/vim-visual-multi', branch = 'master'
   },
   {
  'stevearc/oil.nvim'
+  },
+  {
+    'folke/zen-mode.nvim',
   }
 }, {})

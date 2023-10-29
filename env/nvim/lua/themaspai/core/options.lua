@@ -34,6 +34,7 @@ O.synmaxcol = 240
 
 O.number = true
 O.signcolumn = 'yes'
+O.scrolloff = 8
 
 local highlight_group = A.nvim_create_augroup('YankHighlight', { clear = true })
 A.nvim_create_autocmd('TextYankPost', {
