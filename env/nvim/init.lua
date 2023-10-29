@@ -1,4 +1,5 @@
 local r = require
+r 'themaspai.core.global'
 r 'themaspai.core.keymaps'
 r 'themaspai.core.options'
 r 'themaspai.core.lazy'
@@ -18,3 +19,5 @@ r 'themaspai.plugins.autoformat'
 r 'themaspai.plugins.nvim-go'
 r 'themaspai.plugins.nvim-blame-line'
 r 'themaspai.plugins.treejs'
+r 'themaspai.plugins.oil'
+

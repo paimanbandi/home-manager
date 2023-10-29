@@ -1,49 +1,45 @@
-local g = vim.g
-g.indentLine_char = '¦'
+require 'themaspai.core.global'
+G.indentLine_char = '¦'
 
-local o = vim.o
-o.tabstop = 2
-o.shiftwidth = 2
-o.expandtab = true
-o.autoindent = true
-o.breakindent = true
-o.smartindent = true
-o.hlsearch = false
+O.tabstop = 2
+O.shiftwidth = 2
+O.expandtab = true
+O.autoindent = true
+O.breakindent = true
+O.smartindent = true
+O.hlsearch = false
 
-o.mouse = 'a'
-o.clipboard = 'unnamedplus'
-o.swapfile = false
-o.undofile = true
+O.mouse = 'a'
+O.clipboard = 'unnamedplus'
+O.swapfile = false
+O.undofile = true
 
-o.ignorecase = true
-o.smartcase = true
-o.updatetime = 250
-o.timeoutlen = 300
-o.completeopt = 'menuone,noselect'
-o.termguicolors = true
+O.ignorecase = true
+O.smartcase = true
+O.updatetime = 250
+O.timeoutlen = 300
+O.completeopt = 'menuone,noselect'
+O.termguicolors = true
 
-o.foldcolumn = '1' -- '0' is not bad
-o.foldlevel = 99
-o.foldlevelstart = 99
-o.foldenable = true
-o.foldmethod = 'syntax'
+O.foldcolumn = '1' -- '0' is not bad
+O.foldlevel = 99
+O.foldlevelstart = 99
+O.foldenable = true
+O.foldmethod = 'syntax'
 
-o.hidden = true
-o.history = 1000
-o.lazyredraw = true
-o.synmaxcol = 240
+O.hidden = true
+O.history = 1000
+O.lazyredraw = true
+O.synmaxcol = 240
 
+O.number = true
+O.signcolumn = 'yes'
 
-local wo = vim.wo
-wo.number = true
-wo.signcolumn = 'yes'
-
-local highlight_group = vim.api.nvim_create_augroup('YankHighlight', { clear = true })
-vim.api.nvim_create_autocmd('TextYankPost', {
+local highlight_group = A.nvim_create_augroup('YankHighlight', { clear = true })
+A.nvim_create_autocmd('TextYankPost', {
   callback = function()
-    vim.highlight.on_yank()
+    H.on_yank()
   end,
   group = highlight_group,
   pattern = '*',
 })
- 

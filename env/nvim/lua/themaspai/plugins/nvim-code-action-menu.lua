@@ -1,8 +1,8 @@
-local k = vim.keymap
-k.set('n', '<leader>ca', ':CodeActionMenu<CR>')
+require 'themaspai.core.global'
 
-local g = vim.g
-g.code_action_menu_window_border = 'single'
-g.code_action_menu_show_details = false
-g.code_action_menu_show_diff = true
-g.code_action_menu_show_action_kind = false
+K.set('n', '<leader>ca', ':CodeActionMenu<CR>')
+
+G.code_action_menu_window_border = 'single'
+G.code_action_menu_show_details = false
+G.code_action_menu_show_diff = true
+G.code_action_menu_show_action_kind = false

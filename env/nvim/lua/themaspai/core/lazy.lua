@@ -1,6 +1,8 @@
-local lazypath = vim.fn.stdpath 'data' .. '/lazy/lazy.nvim'
+require 'themaspai.core.global'
+
+local lazypath = F.stdpath 'data' .. '/lazy/lazy.nvim'
 if not vim.loop.fs_stat(lazypath) then
-  vim.fn.system {
+  F.system {
     'git',
     'clone',
     '--filter=blob:none',
@@ -127,7 +129,7 @@ require('lazy').setup({
         --       refer to the README for telescope-fzf-native for more instructions.
         build = 'make',
         cond = function()
-          return vim.fn.executable 'make' == 1
+          return F.executable 'make' == 1
         end,
       },
     },
@@ -200,5 +202,11 @@ require('lazy').setup({
   config = function()
     require('treesj').setup({--[[ your config ]]})
   end,
-}
+},
+  {
+    'mg979/vim-visual-multi', branch = 'master'
+  },
+  {
+ 'stevearc/oil.nvim'
+  }
 }, {})

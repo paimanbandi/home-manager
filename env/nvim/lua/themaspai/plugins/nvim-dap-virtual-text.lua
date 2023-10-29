@@ -1,3 +1,5 @@
+require 'themaspai.core.global'
+
 require("nvim-dap-virtual-text").setup {
     enabled = true,                        -- enable this plugin (the default)
     enabled_commands = true,               -- create commands DapVirtualTextEnable, DapVirtualTextDisable, DapVirtualTextToggle, (DapVirtualTextForceRefresh for refreshing when debug adapter did not notify its termination)
@@ -15,7 +17,7 @@ require("nvim-dap-virtual-text").setup {
         return variable.name .. ' = ' .. variable.value
       end
     end,
-    virt_text_pos = vim.fn.has 'nvim-0.10' == 1 and 'inline' or 'eol',
+    virt_text_pos = F.has 'nvim-0.10' == 1 and 'inline' or 'eol',
     all_frames = false,                    -- show virtual text for all stack frames not only current. Only works for debugpy on my machine.
     virt_lines = false,                    -- show virtual lines instead of virtual text (will flicker!)
     virt_text_win_col = nil                -- position the virtual text at a fixed window column (starting from the first text column) ,

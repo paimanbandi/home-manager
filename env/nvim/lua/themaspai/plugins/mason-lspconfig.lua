@@ -1,3 +1,5 @@
+require 'themaspai.core.global'
+
 local on_attach = function(_, bufnr)
   -- NOTE: Remember that lua is a real programming language, and as such it is possible
   -- to define small helper and utility functions so you don't have to repeat yourself
@@ -10,7 +12,7 @@ local on_attach = function(_, bufnr)
       desc = 'LSP: ' .. desc
     end
 
-    vim.keymap.set('n', keys, func, { buffer = bufnr, desc = desc })
+    K.set('n', keys, func, { buffer = bufnr, desc = desc })
   end
 
   -- nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
@@ -77,14 +79,14 @@ local servers = {
 require('neodev').setup()
 
 -- nvim-cmp supports additional completion capabilities, so broadcast that to servers
-local capabilities = vim.lsp.protocol.make_client_capabilities()
+local capabilities = L.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 -- Ensure the servers above are installed
 local mason_lspconfig = require 'mason-lspconfig'
 
 mason_lspconfig.setup {
-  ensure_installed = vim.tbl_keys(servers),
+  ensure_installed = T(servers),
 }
 
 mason_lspconfig.setup_handlers {

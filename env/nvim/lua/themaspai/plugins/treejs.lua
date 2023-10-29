@@ -1,3 +1,5 @@
+require 'themaspai.core.global'
+
 local tsj = require('treesj')
 
 local langs = {--[[ configuration for languages ]]}
@@ -27,8 +29,8 @@ tsj.setup({
 })
 
 -- For use default preset and it work with dot
-vim.keymap.set('n', '<leader>m', ':TSJToggle<cr>')
+K.set('n', '<leader>m', ':TSJToggle<cr>')
 -- For extending default preset with `recursive = true`, but this doesn't work with dot
-vim.keymap.set('n', '<leader>M', function()
+K.set('n', '<leader>M', function()
     require('treesj').toggle({ split = { recursive = true } })
 end)

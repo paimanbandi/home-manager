@@ -1,6 +1,7 @@
 vim.g.loaded = 1
 vim.g.loaded_netrwPlugin = 1
 vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
+vim.cmd[[autocmd BufEnter * NvimTreeRefresh]]
 
 require 'nvim-tree'.setup {
   renderer = {
