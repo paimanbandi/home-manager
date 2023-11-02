@@ -22,9 +22,9 @@ K.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
 K.set('t', '<ESC>', '<C-\\><C-n>')
 
 -- Diagnostic keymaps
-K.set('n', '[d', vim.diagnostic.goto_prev, { desc = 'Go to previous diagnostic message' })
-K.set('n', ']d', vim.diagnostic.goto_next, { desc = 'Go to next diagnostic message' })
-K.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open floating diagnostic message' })
-K.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
+K.set('n', '[d', D.goto_prev, { desc = 'Go to previous diagnostic message' })
+K.set('n', ']d', D.goto_next, { desc = 'Go to next diagnostic message' })
+K.set('n', '<leader>e', D.open_float, { desc = 'Open floating diagnostic message' })
+K.set('n', '<leader>q',D.setloclist, { desc = 'Open diagnostics list' })
 
 

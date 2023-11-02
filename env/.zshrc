@@ -2,8 +2,10 @@ export FLUTTER_HOME=$HOME/Applications/flutter
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk-17.jdk/Contents/Home
 export GCLOUD_HOME=$HOME/Applications/google-cloud-sdk
 export GOPATH=$HOME/go:$HOME/Projects/Personal/golang
+export GOBIN=$HOME/go/bin
 export DENO_INSTALL=$HOME/.deno
-export PATH=$PATH:$FLUTTER_HOME/bin:$GCLOUD_HOME/bin:$JAVA_HOME/bin:$GOPATH/bin:$DENO_INSTALL/bin
+export MONGO_HOME=/usr/local/opt/mongodb-community@5.0
+export PATH=$PATH:$FLUTTER_HOME/bin:$GCLOUD_HOME/bin:$JAVA_HOME/bin:$GOBIN:$DENO_INSTALL/bin:$MONGO_HOME/bin
 
 export EDITOR='nvim'
 export NIXPKGS_ALLOW_INSECURE=1
@@ -11,7 +13,9 @@ export NIXPKGS_ALLOW_INSECURE=1
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 alias pp='cd $HOME/Projects/Personal'
-alias gp='cd $HOME/Projects/Personal/golang'
+
+# golang projects
+alias gp='cd $HOME/Projects/Personal/golang/src'
 alias ss='cd $HOME/Projects/Personal/golang/src/sharing-session'
 
 alias c=clear
