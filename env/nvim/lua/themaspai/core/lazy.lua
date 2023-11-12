@@ -31,7 +31,12 @@ require('lazy').setup({
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
-      { 'williamboman/mason.nvim', config = true },
+      { 'williamboman/mason.nvim', config = true,
+    opts = {
+      ensure_installed = {
+        "eslint-lsp",
+      },
+    }},
       'williamboman/mason-lspconfig.nvim',
       'folke/neodev.nvim',
     },
@@ -193,9 +198,15 @@ require('lazy').setup({
     'mg979/vim-visual-multi', branch = 'master'
   },
   {
- 'stevearc/oil.nvim'
+    'stevearc/oil.nvim'
   },
   {
     'folke/zen-mode.nvim',
-  }
+  },
+  {
+    "folke/todo-comments.nvim",
+      dependencies = { "nvim-lua/plenary.nvim" },
+      opts = {
+      }
+}
 }, {})

@@ -14,9 +14,11 @@ in
   home.packages = with pkgs;
   [
     zsh 
+    fish
     starship
     neovim
     neofetch
+    tmux
     bat
     eza
     git
@@ -24,6 +26,7 @@ in
     ripgrep
     yarn
     go
+    cargo
   ];
 
   home.file = {
@@ -32,6 +35,7 @@ in
     ".config/alacritty".source = "${homeManagerPath}/alacritty.yml";
     ".wezterm.lua".source = "${homeManagerPath}/.wezterm.lua";
     ".config/starship.toml".source = "${homeManagerPath}/starship.toml";
+    ".config/fish/config.fish".source = "${homeManagerPath}/config.fish";
   };
 
   programs.home-manager.enable = true;

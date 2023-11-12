@@ -1,4 +1,5 @@
 require 'themaspai.core.global'
+
 return {
   'neovim/nLconfig',
   config = function()

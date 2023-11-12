@@ -5,7 +5,7 @@ export GOPATH=$HOME/Projects/Personal/golang
 export GOBIN=$HOME/go/bin
 export DENO_INSTALL=$HOME/.deno
 export MONGO_HOME=/usr/local/opt/mongodb-community@5.0
-export PATH=$PATH:$FLUTTER_HOME/bin:$GCLOUD_HOME/bin:$JAVA_HOME/bin:$GOBIN:$DENO_INSTALL/bin:$MONGO_HOME/bin
+export PATH=$PATH:$FLUTTER_HOME/bin:$GCLOUD_HOME/bin:$JAVA_HOME/bin:$GOBIN:$DENO_INSTALL/bin:$MONGO_HOME/bin:$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin
 
 export EDITOR='nvim'
 export NIXPKGS_ALLOW_INSECURE=1
@@ -13,6 +13,8 @@ export NIXPKGS_ALLOW_INSECURE=1
 export TERM=screen-256color
 
 export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
+set -gx PATH /usr/local/bin /usr/bin /bin $PATH
 
 alias creds='cd $HOME/Projects/Creds'
 alias pp='cd $HOME/Projects/Personal'
@@ -45,10 +47,11 @@ alias vs='v $HOME/.config/home-manager/env/starship.toml'
 alias vz='v $HOME/.config/home-manager/env/.zshrc'
 alias sz='source $HOME/.zshrc'
 
+alias sf='source $HOME/.config/fish/config.fish'
 # home-manager
 alias hm='cd $HOME/.config/home-manager'
 alias hme='home-manager edit'
-alias hms='home-manager switch && sz && sudo chmod 777 $HOME/.config/nvim/lazy-lock.json'
+alias hms='home-manager switch && sf && sudo chmod 777 $HOME/.config/nvim/lazy-lock.json'
 alias vh='v $HOME/.config/home-manager/home.nix'
 
 # yabai
@@ -57,7 +60,7 @@ alias vy='v $HOME/.config/yabai'
 # kubectl
 #alias kubectl='HTTPS_PROXY=localhost:8888 kubectl'
 
-export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+set -gx NVM_DIR (if set -q XDG_CONFIG_HOME; echo $XDG_CONFIG_HOME/nvm; else; echo $HOME/.nvm; end)
 
-eval "$(starship init zsh)"
+starship init fish | source
+
