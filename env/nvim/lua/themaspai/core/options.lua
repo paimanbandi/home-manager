@@ -21,12 +21,6 @@ O.timeoutlen = 300
 O.completeopt = 'menuone,noselect'
 O.termguicolors = true
 
-O.foldcolumn = '1' -- '0' is not bad
-O.foldlevel = 99
-O.foldlevelstart = 99
-O.foldenable = true
-O.foldmethod = 'syntax'
-
 O.hidden = true
 O.history = 1000
 O.lazyredraw = true

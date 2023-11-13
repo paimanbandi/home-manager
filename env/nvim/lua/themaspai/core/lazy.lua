@@ -7,7 +7,7 @@ if not LO.fs_stat(lazypath) then
     'clone',
     '--filter=blob:none',
     'https://github.com/folke/lazy.nvim.git',
-    '--branch=stable', 
+    '--branch=stable',
     lazypath,
   }
 end
@@ -17,26 +17,24 @@ require('lazy').setup({
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {},
   },
   {
     'weilbith/nvim-code-action-menu',
     cmd = 'CodeActionMenu',
   },
-  'tpope/vim-fugitive',
-  'tpope/vim-rhubarb',
-  -- Detect tabstop and shiftwidth automatically
-  'tpope/vim-sleuth',
   {
     -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
-      { 'williamboman/mason.nvim', config = true,
-    opts = {
-      ensure_installed = {
-        "eslint-lsp",
+      {
+        'williamboman/mason.nvim',
+        config = true,
+        opts = {
+          ensure_installed = {
+            "eslint-lsp",
+          },
+        }
       },
-    }},
       'williamboman/mason-lspconfig.nvim',
       'folke/neodev.nvim',
     },
@@ -50,37 +48,8 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
     },
   },
-  { 'folke/which-key.nvim',  opts = {} },
-  {
-    -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    opts = {
-      -- See `:help gitsigns.txt`
-      signs = {
-        add = { text = '+' },
-        change = { text = '~' },
-        delete = { text = '_' },
-        topdelete = { text = '‾' },
-        changedelete = { text = '~' },
-      },
-      on_attach = function(bufnr)
-        K.set('n', '<leader>hp', require('gitsigns').preview_hunk, { buffer = bufnr, desc = 'Preview git hunk' })
-
-        -- don't override the built-in and fugitive keymaps
-        local gs = package.loaded.gitsigns
-        K.set({ 'n', 'v' }, ']c', function()
-          if W.diff then return ']c' end
-          S(function() gs.next_hunk() end)
-          return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = "Jump to next hunk" })
-        K.set({ 'n', 'v' }, '[c', function()
-          if W.diff then return '[c' end
-          S(function() gs.prev_hunk() end)
-          return '<Ignore>'
-        end, { expr = true, buffer = bufnr, desc = "Jump to previous hunk" })
-      end,
-    },
-  },
+  { 'folke/which-key.nvim',   opts = {} },
+  { 'lewis6991/gitsigns.nvim' },
   {
     'navarasu/onedark.nvim',
     priority = 1000,
@@ -88,17 +57,7 @@ require('lazy').setup({
       C.colorscheme 'onedark'
     end,
   },
-  {
-    'nvim-lualine/lualine.nvim',
-    opts = {
-      options = {
-        icons_enabled = false,
-        theme = 'onedark',
-        component_separators = '|',
-        section_separators = '',
-      },
-    },
-  },
+  { 'nvim-lualine/lualine.nvim' },
   {
     "utilyre/barbecue.nvim",
     name = "barbecue",
@@ -109,10 +68,7 @@ require('lazy').setup({
     opts = {
     },
   },
-  -- "gc" to comment visual regions/lines
-  { 'numToStr/Comment.nvim', opts = {} },
-
-  -- Fuzzy Finder (files, lsp, etc)
+  { 'numToStr/Comment.nvim' },
   {
     'nvim-telescope/telescope.nvim',
     branch = '0.1.x',
@@ -132,31 +88,22 @@ require('lazy').setup({
       },
     },
   },
-
   {
     'nvim-tree/nvim-tree.lua',
     dependencies = {
       'nvim-tree/nvim-web-devicons'
     }
   },
-
   {
-    -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     dependencies = {
       'nvim-treesitter/nvim-treesitter-textobjects',
     },
     build = ':TSUpdate',
   },
-  {
-    'mfussenegger/nvim-dap'
-  },
-  {
-    'rcarriga/nvim-dap-ui'
-  },
-  {
-    'leoluz/nvim-dap-go'
-  },
+  { 'mfussenegger/nvim-dap' },
+  { 'rcarriga/nvim-dap-ui' },
+  { 'leoluz/nvim-dap-go' },
   {
     "olexsmir/gopher.nvim",
     requires = { -- dependencies
@@ -164,23 +111,11 @@ require('lazy').setup({
       "nvim-treesitter/nvim-treesitter",
     },
   },
-  {
-    'theHamsta/nvim-dap-virtual-text'
-  },
-  {
-    'akinsho/toggleterm.nvim'
-  },
-  {
-    'windwp/nvim-autopairs'
-  },
-  {
-    'nvim-lua/plenary.nvim',
-    'crispgm/nvim-go',
-    'rcarriga/nvim-notify'
-  },
-  {
-    'tveskag/nvim-blame-line'
-  },
+  { 'theHamsta/nvim-dap-virtual-text' },
+  { 'akinsho/toggleterm.nvim' },
+  { 'windwp/nvim-autopairs' },
+  { 'nvim-lua/plenary.nvim',          'crispgm/nvim-go', 'rcarriga/nvim-notify' },
+  { 'tveskag/nvim-blame-line' },
   {
     "kylechui/nvim-surround",
     version = "*",
@@ -188,7 +123,7 @@ require('lazy').setup({
     opts = {}
   },
   {
-  'Wansmer/treesj',
+    'Wansmer/treesj',
     keys = {
       '<space>m',
       '<space>j',
@@ -201,40 +136,44 @@ require('lazy').setup({
       require('treesj').setup({})
     end,
   },
-  {
-    'mg979/vim-visual-multi', branch = 'master'
-  },
-  {
-    'stevearc/oil.nvim'
-  },
-  {
-    'folke/zen-mode.nvim',
-  },
+  { 'mg979/vim-visual-multi', branch = 'master' },
+  { 'stevearc/oil.nvim' },
+  { 'folke/zen-mode.nvim' },
   {
     "folke/todo-comments.nvim",
-      dependencies = { "nvim-lua/plenary.nvim" },
-      opts = {
-      }
+    dependencies = { "nvim-lua/plenary.nvim" },
+    opts = {
+    }
   },
-  {
-    'kevinhwang91/nvim-ufo',
-  },
-  {
-    'kevinhwang91/promise-async'
-  },
-  {
-    "luukvbaal/statuscol.nvim"
-  },
+  { 'kevinhwang91/nvim-ufo' },
+  { 'kevinhwang91/promise-async' },
+  { "luukvbaal/statuscol.nvim" },
   {
     "folke/flash.nvim",
     event = "VeryLazy",
-      opts = {},
-      keys = {
-        { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end, desc = "Flash" },
-        { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
-        { "r", mode = "o", function() require("flash").remote() end, desc = "Remote Flash" },
-        { "R", mode = { "o", "x" }, function() require("flash").treesitter_search() end, desc = "Treesitter Search" },
-        { "<c-s>", mode = { "c" }, function() require("flash").toggle() end, desc = "Toggle Flash Search" },
+    opts = {},
+    keys = {
+      { "s", mode = { "n", "x", "o" }, function() require("flash").jump() end,       desc = "Flash" },
+      { "S", mode = { "n", "x", "o" }, function() require("flash").treesitter() end, desc = "Flash Treesitter" },
+      { "r", mode = "o",               function() require("flash").remote() end,     desc = "Remote Flash" },
+      {
+        "R",
+        mode = { "o", "x" },
+        function() require("flash").treesitter_search() end,
+        desc =
+        "Treesitter Search"
+      },
+      {
+        "<c-s>",
+        mode = { "c" },
+        function() require("flash").toggle() end,
+        desc =
+        "Toggle Flash Search"
+      },
     },
+  },
+  {
+    'stevearc/conform.nvim',
+    opts = {},
   }
 }, {})
