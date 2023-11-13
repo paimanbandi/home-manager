@@ -1,4 +1,3 @@
 require 'themaspai.core.global'
-
-K.set('n', '<leader>zz', ':ZenMode<cr>')
-
+require('zen-mode').setup({})
+K.set('n','<leader>zz',':ZenMode<cr>')

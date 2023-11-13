@@ -36,6 +36,7 @@ in
     ".wezterm.lua".source = "${homeManagerPath}/.wezterm.lua";
     ".config/starship.toml".source = "${homeManagerPath}/starship.toml";
     ".config/fish/config.fish".source = "${homeManagerPath}/config.fish";
+    ".tmux.conf".source = "${homeManagerPath}/.tmux.conf";
   };
 
   programs.home-manager.enable = true;

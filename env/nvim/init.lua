@@ -1,4 +1,3 @@
--- TODO TEST
 local r = require
 r 'themaspai.core.global'
 r 'themaspai.core.keymaps'
@@ -21,5 +20,8 @@ r 'themaspai.plugins.nvim-go'
 r 'themaspai.plugins.nvim-blame-line'
 r 'themaspai.plugins.treejs'
 r 'themaspai.plugins.oil'
+r 'themaspai.plugins.gopher'
+r 'themaspai.plugins.ufo'
+r 'themaspai.plugins.statuscol'
 r 'themaspai.plugins.zen-mode'
--- r 'themaspai.plugins.nvim-lspconfig'
+

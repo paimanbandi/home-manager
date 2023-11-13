@@ -47,7 +47,13 @@ alias vs='v $HOME/.config/home-manager/env/starship.toml'
 alias vz='v $HOME/.config/home-manager/env/.zshrc'
 alias sz='source $HOME/.zshrc'
 
+# fish 
+alias vf='v $HOME/.config/home-manager/env/config.fish'
 alias sf='source $HOME/.config/fish/config.fish'
+
+# tmux
+alias vt='v $HOME/.config/home-manager/env/.tmux.conf'
+
 # home-manager
 alias hm='cd $HOME/.config/home-manager'
 alias hme='home-manager edit'
