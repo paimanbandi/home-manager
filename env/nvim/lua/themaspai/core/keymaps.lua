@@ -2,9 +2,6 @@ require 'themaspai.core.global'
 G.mapleader = ' '
 G.maplocalleader = ' '
 
-K.set({ 'i', 'v' }, 'hh', '<ESC>')
-K.set({ 'i', 'v' }, 'HH', '<ESC>')
-
 K.set('v', 'J', ':m \'>+1<CR>gv=gv')
 K.set('v', 'K', ':m \'<-2<CR>gv=gv')
 

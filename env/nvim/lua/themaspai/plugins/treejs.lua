@@ -2,7 +2,7 @@ require 'themaspai.core.global'
 
 local tsj = require('treesj')
 
-local langs = {--[[ configuration for languages ]]}
+local langs = { --[[ configuration for languages ]] }
 
 tsj.setup({
   ---@type boolean Use default keymaps (<space>m - toggle, <space>j - join, <space>s - split)
@@ -28,9 +28,7 @@ tsj.setup({
   -- langs = {}, -- See the default presets in lua/treesj/langs
 })
 
--- For use default preset and it work with dot
 K.set('n', '<leader>m', ':TSJToggle<cr>')
--- For extending default preset with `recursive = true`, but this doesn't work with dot
 K.set('n', '<leader>M', function()
-    require('treesj').toggle({ split = { recursive = true } })
+  require('treesj').toggle({ split = { recursive = true } })
 end)

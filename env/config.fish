@@ -32,6 +32,7 @@ alias x='exit'
 alias ll='eza -la'
 
 # neovim
+alias nvim=$HOME/Applications/nvim-macos/bin/nvim
 alias v='nvim'
 alias vd='v .'
 alias vc='cd $HOME/.config/home-manager/env/nvim/ && v init.lua'
