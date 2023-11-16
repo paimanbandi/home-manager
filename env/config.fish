@@ -5,7 +5,9 @@ export GOPATH=$HOME/Projects/Personal/golang
 export GOBIN=$HOME/go/bin
 export DENO_INSTALL=$HOME/.deno
 export MONGO_HOME=/usr/local/opt/mongodb-community@5.0
-export PATH=$PATH:$FLUTTER_HOME/bin:$GCLOUD_HOME/bin:$JAVA_HOME/bin:$GOBIN:$DENO_INSTALL/bin:$MONGO_HOME/bin:$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin
+# export PATH=$PATH:$FLUTTER_HOME/bin:$GCLOUD_HOME/bin:$JAVA_HOME/bin:$GOBIN:$DENO_INSTALL/bin:$MONGO_HOME/bin:$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin
+
+set -gx PATH $PATH $FLUTTER_HOME/bin $GCLOUD_HOME/bin $JAVA_HOME/bin $GOBIN $DENO_INSTALL/bin $MONGO_HOME/bin $HOME/.nix-profile/bin /nix/var/nix/profiles/default/bin
 
 export EDITOR='nvim'
 export NIXPKGS_ALLOW_INSECURE=1
@@ -69,4 +71,3 @@ alias kubectl='HTTPS_PROXY=localhost:8888 kubectl'
 set -gx NVM_DIR (if set -q XDG_CONFIG_HOME; echo $XDG_CONFIG_HOME/nvm; else; echo $HOME/.nvm; end)
 
 starship init fish | source
-
