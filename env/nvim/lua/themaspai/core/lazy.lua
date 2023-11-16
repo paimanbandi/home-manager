@@ -192,5 +192,14 @@ require('lazy').setup({
   },
   {
     'norcalli/nvim-colorizer.lua'
-  }
+  },
+  {
+    'jinh0/eyeliner.nvim'
+  },
+  {
+    'VonHeikemen/fine-cmdline.nvim',
+    dependencies = {
+      'MunifTanjim/nui.nvim',
+    }
+  },
 }, {})
