@@ -1,7 +1,9 @@
-vim.g.loaded = 1
-vim.g.loaded_netrwPlugin = 1
-vim.cmd([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
-vim.cmd[[autocmd BufEnter * NvimTreeRefresh]]
+require 'themaspai.core.global'
+
+G.loaded = 1
+G.loaded_netrwPlugin = 1
+C([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
+C [[autocmd BufEnter * NvimTreeRefresh]]
 
 require 'nvim-tree'.setup {
   renderer = {
@@ -22,9 +24,13 @@ require 'nvim-tree'.setup {
     }
   },
   filters = {
-    dotfiles = true,
+    dotfiles = false,
     custom = {}
+  },
+  git = {
+    enable = true,
+    ignore = false,
   },
 }
 
-vim.keymap.set('n', '<leader>t', ':NvimTreeToggle<CR>')
+K.set('n', '<leader>t', ':NvimTreeToggle<CR>')

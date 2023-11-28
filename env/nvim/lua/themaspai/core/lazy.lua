@@ -17,13 +17,9 @@ require('lazy').setup({
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    opts = {},
   },
   {
-    'weilbith/nvim-code-action-menu',
-    cmd = 'CodeActionMenu',
-  },
-  {
-    -- LSP Configuration & Plugins
     'neovim/nvim-lspconfig',
     dependencies = {
       {
@@ -207,8 +203,20 @@ require('lazy').setup({
   },
   {
     "max397574/better-escape.nvim",
+  },
+  {
+    "folke/trouble.nvim",
+    dependencies = { "nvim-tree/nvim-web-devicons" },
+    opts = {},
+  },
+  {
+    'nvimdev/lspsaga.nvim',
     config = function()
-      require("better_escape").setup()
+      require('lspsaga').setup({})
     end,
+    dependencies = {
+      'nvim-treesitter/nvim-treesitter',
+      'nvim-tree/nvim-web-devicons'
+    }
   }
 }, {})
