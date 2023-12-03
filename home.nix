@@ -27,6 +27,7 @@ in
     yarn
     go
     cargo
+    lazygit
   ];
 
   home.file = {

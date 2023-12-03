@@ -72,3 +72,4 @@ alias kubectl='HTTPS_PROXY=localhost:8888 kubectl'
 set -gx NVM_DIR (if set -q XDG_CONFIG_HOME; echo $XDG_CONFIG_HOME/nvm; else; echo $HOME/.nvm; end)
 
 starship init fish | source
+

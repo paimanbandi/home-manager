@@ -14,7 +14,7 @@ O.clipboard = 'unnamedplus'
 O.swapfile = false
 O.undofile = true
 
-O.ignorecase = true
+O.ignorecase = false
 O.smartcase = true
 O.updatetime = 250
 O.timeoutlen = 300
@@ -29,6 +29,9 @@ O.synmaxcol = 240
 O.number = true
 O.signcolumn = 'yes'
 O.scrolloff = 8
+
+C.highlight({ "Normal", "guibg=NONE" })
+C.highlight({ "Normal", "ctermbg=NONE" })
 
 local highlight_group = A.nvim_create_augroup('YankHighlight', { clear = true })
 A.nvim_create_autocmd('TextYankPost', {

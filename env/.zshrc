@@ -28,6 +28,7 @@ alias x='exit'
 alias ll='eza -la'
 
 # neovim
+alias nvim=$HOME/Applications/nvim-macos/bin/nvim
 alias v='nvim'
 alias vd='v .'
 alias vc='cd $HOME/.config/home-manager/env/nvim/ && v init.lua'
@@ -61,3 +62,6 @@ export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || pr
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
 
 eval "$(starship init zsh)"
+
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
