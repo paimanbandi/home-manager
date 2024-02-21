@@ -5,7 +5,8 @@ export GOPATH=$HOME/Projects/Personal/golang
 export GOBIN=$HOME/go/bin
 export DENO_INSTALL=$HOME/.deno
 export MONGO_HOME=/usr/local/opt/mongodb-community@5.0
-export PATH=$PATH:$FLUTTER_HOME/bin:$GCLOUD_HOME/bin:$JAVA_HOME/bin:$GOBIN:$DENO_INSTALL/bin:$MONGO_HOME/bin
+export NIXVIM_HOME=$HOME/.config/nixvim
+export PATH=$PATH:$FLUTTER_HOME/bin:$GCLOUD_HOME/bin:$JAVA_HOME/bin:$GOBIN:$DENO_INSTALL/bin:$MONGO_HOME/bin:$NIXVIM_HOME
 
 export EDITOR='nvim'
 export NIXPKGS_ALLOW_INSECURE=1
@@ -28,7 +29,8 @@ alias x='exit'
 alias ll='eza -la'
 
 # neovim
-alias nvim=$HOME/Applications/nvim-macos/bin/nvim
+#alias nvim=$HOME/Applications/nvim-macos/bin/nvim
+alias nvim='nix run . --extra-experimental-features "flakes nix-command"'
 alias v='nvim'
 alias vd='v .'
 alias vc='cd $HOME/.config/home-manager/env/nvim/ && v init.lua'
@@ -49,7 +51,8 @@ alias sz='source $HOME/.zshrc'
 # home-manager
 alias hm='cd $HOME/.config/home-manager'
 alias hme='home-manager edit'
-alias hms='home-manager switch && sz && sudo chmod 777 $HOME/.config/nvim/lazy-lock.json'
+#alias hms='home-manager switch && sz && sudo chmod 777 $HOME/.config/nvim/lazy-lock.json'
+alias hms='home-manager switch && sz'
 alias vh='v $HOME/.config/home-manager/home.nix'
 
 # yabai

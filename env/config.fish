@@ -18,7 +18,7 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 set -gx PATH /usr/local/bin /usr/bin /bin $PATH
 
-alias creds='cd $HOME/Projects/Creds'
+alias pc='cd $HOME/Projects/Creds'
 alias pp='cd $HOME/Projects/Personal'
 
 # golang projects
@@ -60,7 +60,7 @@ alias vt='v $HOME/.config/home-manager/env/.tmux.conf'
 # home-manager
 alias hm='cd $HOME/.config/home-manager'
 alias hme='home-manager edit'
-alias hms='home-manager switch && sf && sudo chmod 777 $HOME/.config/nvim/lazy-lock.json'
+alias hms='home-manager switch && sf'
 alias vh='v $HOME/.config/home-manager/home.nix'
 
 # yabai

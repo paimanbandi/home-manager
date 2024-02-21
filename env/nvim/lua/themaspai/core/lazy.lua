@@ -232,4 +232,11 @@ require('lazy').setup({
       require("telescope").load_extension("lazygit")
     end,
   },
+  {
+    "OlegGulevskyy/better-ts-errors.nvim",
+    dependencies = { "MunifTanjim/nui.nvim" },
+    config = {
+      keymap = "<leader>dd"
+    }
+  },
 }, {})

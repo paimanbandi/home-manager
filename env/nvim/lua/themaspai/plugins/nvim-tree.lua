@@ -6,6 +6,9 @@ C([[ highlight NvimTreeIndentMarker guifg=#3FC5FF ]])
 C [[autocmd BufEnter * NvimTreeRefresh]]
 
 require 'nvim-tree'.setup {
+  view = {
+    width = 40,
+  },
   renderer = {
     icons = {
       glyphs = {
@@ -32,5 +35,4 @@ require 'nvim-tree'.setup {
     ignore = false,
   },
 }
-
 K.set('n', '<leader>t', ':NvimTreeToggle<CR>')

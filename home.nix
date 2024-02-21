@@ -15,6 +15,7 @@ in
   [
     zsh 
     fish
+    wget
     starship
     neovim
     neofetch
@@ -31,7 +32,9 @@ in
   ];
 
   home.file = {
+    ".config/nix".source = "${homeManagerPath}/nix";
     ".zshrc".source = "${homeManagerPath}/.zshrc";
+    ".config/nixvim".source = "${homeManagerPath}/nixvim";
     ".config/nvim".source = "${homeManagerPath}/nvim";
     ".config/alacritty".source = "${homeManagerPath}/alacritty.yml";
     ".wezterm.lua".source = "${homeManagerPath}/.wezterm.lua";
@@ -40,6 +43,7 @@ in
     ".tmux.conf".source = "${homeManagerPath}/.tmux.conf";
   };
 
+  manual.manpages.enable = false;
   programs.home-manager.enable = true;
 }
 
