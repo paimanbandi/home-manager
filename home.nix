@@ -13,7 +13,7 @@ in
 
   home.packages = with pkgs;
   [
-    zsh 
+    # zsh 
     fish
     wget
     starship
@@ -33,7 +33,7 @@ in
 
   home.file = {
     ".config/nix".source = "${homeManagerPath}/nix";
-    ".zshrc".source = "${homeManagerPath}/.zshrc";
+    # ".zshrc".source = "${homeManagerPath}/.zshrc";
     ".config/nixvim".source = "${homeManagerPath}/nixvim";
     ".config/nvim".source = "${homeManagerPath}/nvim";
     ".config/alacritty".source = "${homeManagerPath}/alacritty.yml";

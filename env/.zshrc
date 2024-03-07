@@ -30,7 +30,7 @@ alias ll='eza -la'
 
 # neovim
 #alias nvim=$HOME/Applications/nvim-macos/bin/nvim
-alias nvim='nix run . --extra-experimental-features "flakes nix-command"'
+alias nvim='$HOME/.config/nixvim/result/bin/nvim'
 alias v='nvim'
 alias vd='v .'
 alias vc='cd $HOME/.config/home-manager/env/nvim/ && v init.lua'

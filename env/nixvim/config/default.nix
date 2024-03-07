@@ -47,6 +47,5 @@
     ./plug/utils/whichkey.nix
     ./plug/utils/hardtime.nix
     
-    ./plug/nvim-tree/nvim-tree-lua.nix
   ];
 }

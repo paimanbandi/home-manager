@@ -199,7 +199,7 @@ require('lazy').setup({
     }
   },
   {
-    "lewis6991/satellite.nvim"
+    'dstein64/nvim-scrollview'
   },
   {
     "max397574/better-escape.nvim",
@@ -237,6 +237,8 @@ require('lazy').setup({
     dependencies = { "MunifTanjim/nui.nvim" },
     config = {
       keymap = "<leader>dd"
-    }
+    },
   },
+  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  { 'windwp/nvim-ts-autotag' }
 }, {})

@@ -19,6 +19,15 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 set -gx PATH /usr/local/bin /usr/bin /bin $PATH
 
 alias pc='cd $HOME/Projects/Creds'
+alias cda='cd $HOME/Projects/Creds/creds-dashboard-api'
+alias cdw='cd $HOME/Projects/Creds/creds-dashboard-web'
+alias cpa='cd $HOME/Projects/Creds/creds-platform-api'
+alias cpw='cd $HOME/Projects/Creds/creds-platform-web'
+
+# replix
+alias pr='cd $HOME/Projects/Replix'
+alias prp='cd $HOME/Projects/Replix/project'
+
 alias pp='cd $HOME/Projects/Personal'
 
 # golang projects
@@ -32,7 +41,8 @@ alias x='exit'
 alias ll='eza -la'
 
 # neovim
-alias nvim=$HOME/Applications/nvim-macos/bin/nvim
+#alias nvim='$HOME/.config/nixvim/result/bin/nvim'
+#alias nvim='/Users/paiman/Applications/nvim-macos/bin/nvim'
 alias v='nvim'
 alias vd='v .'
 alias vc='cd $HOME/.config/home-manager/env/nvim/ && v init.lua'
@@ -47,8 +57,8 @@ alias vw='v $HOME/.config/home-manager/env/.wezterm.lua'
 alias vs='v $HOME/.config/home-manager/env/starship.toml'
 
 # zsh
-alias vz='v $HOME/.config/home-manager/env/.zshrc'
-alias sz='source $HOME/.zshrc'
+# alias vz='v $HOME/.config/home-manager/env/.zshrc'
+# alias sz='source $HOME/.zshrc'
 
 # fish 
 alias vf='v $HOME/.config/home-manager/env/config.fish'
@@ -60,7 +70,9 @@ alias vt='v $HOME/.config/home-manager/env/.tmux.conf'
 # home-manager
 alias hm='cd $HOME/.config/home-manager'
 alias hme='home-manager edit'
-alias hms='home-manager switch && sf'
+#alias hms='cd $HOME/.config/home-manager/env/nixvim/ && nix build --extra-experimental-features "flakes nix-command" && home-manager switch && sf'
+
+alias hms='home-manager switch && sf && sudo chmod 777 $HOME/.config/nvim/lazy-lock.json'
 alias vh='v $HOME/.config/home-manager/home.nix'
 
 # yabai
