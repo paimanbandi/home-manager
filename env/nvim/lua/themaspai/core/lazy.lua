@@ -14,6 +14,7 @@ end
 OO.rtp:prepend(lazypath)
 
 require('lazy').setup({
+  require 'themaspai.plugins.colorscheme',
   {
     "pmizio/typescript-tools.nvim",
     dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
@@ -44,15 +45,7 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
     },
   },
-  { 'folke/which-key.nvim',   opts = {} },
   { 'lewis6991/gitsigns.nvim' },
-  {
-    'navarasu/onedark.nvim',
-    priority = 1000,
-    config = function()
-      C.colorscheme 'onedark'
-    end,
-  },
   { 'nvim-lualine/lualine.nvim' },
   {
     "utilyre/barbecue.nvim",
@@ -239,6 +232,11 @@ require('lazy').setup({
       keymap = "<leader>dd"
     },
   },
-  { "lukas-reineke/indent-blankline.nvim", main = "ibl", opts = {} },
+  {
+    'huy-hng/anyline.nvim',
+    dependencies = { 'nvim-treesitter/nvim-treesitter' },
+    config = false,
+    event = 'VeryLazy',
+  },
   { 'windwp/nvim-ts-autotag' }
 }, {})

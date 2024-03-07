@@ -13,3 +13,4 @@ W = vim.wo
 LO = vim.loop
 OO = vim.opt
 
+OPTS = { noremap = true, silent = true }
