@@ -15,11 +15,7 @@ OO.rtp:prepend(lazypath)
 
 require('lazy').setup({
   require 'themaspai.plugins.colorscheme',
-  {
-    "pmizio/typescript-tools.nvim",
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
-    opts = {},
-  },
+  require 'themaspai.plugins.typescript',
   {
     'neovim/nvim-lspconfig',
     dependencies = {
@@ -45,7 +41,7 @@ require('lazy').setup({
       'rafamadriz/friendly-snippets',
     },
   },
-  { 'lewis6991/gitsigns.nvim' },
+  require 'themaspai.plugins.git',
   { 'nvim-lualine/lualine.nvim' },
   {
     "utilyre/barbecue.nvim",
@@ -95,9 +91,7 @@ require('lazy').setup({
     },
     build = ':TSUpdate',
   },
-  { 'mfussenegger/nvim-dap' },
-  { 'rcarriga/nvim-dap-ui' },
-  { 'leoluz/nvim-dap-go' },
+  require 'themaspai.plugins.dap',
   {
     "olexsmir/gopher.nvim",
     requires = { -- dependencies
@@ -105,11 +99,9 @@ require('lazy').setup({
       "nvim-treesitter/nvim-treesitter",
     },
   },
-  { 'theHamsta/nvim-dap-virtual-text' },
   { 'akinsho/toggleterm.nvim' },
   { 'windwp/nvim-autopairs' },
-  { 'nvim-lua/plenary.nvim',          'crispgm/nvim-go', 'rcarriga/nvim-notify' },
-  { 'tveskag/nvim-blame-line' },
+  { 'nvim-lua/plenary.nvim',    'crispgm/nvim-go', 'rcarriga/nvim-notify' },
   {
     "kylechui/nvim-surround",
     version = "*",
@@ -238,5 +230,4 @@ require('lazy').setup({
     config = false,
     event = 'VeryLazy',
   },
-  { 'windwp/nvim-ts-autotag' }
 }, {})

@@ -11,10 +11,10 @@ K.set('n', '<C-u>', '<C-u>zz')
 K.set('n', '<leader>n', '<C-u>zz')
 K.set('n', '<leader>f', '<C-u>zz')
 
-K.set({ 'n', 'v' }, '<Space>', '<Nop>', { silent = true })
+K.set({ 'n', 'v' }, '<Space>', '<Nop>', NORM)
 
-K.set('n', 'K', "v:count == 0 ? 'gk' : 'K'", { expr = true, silent = true })
-K.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", { expr = true, silent = true })
+K.set('n', 'K', "v:count == 0 ? 'gk' : 'K'", EXPR)
+K.set('n', 'j', "v:count == 0 ? 'gj' : 'j'", EXPR)
 
 K.set('t', '<ESC>', '<C-\\><C-n>')
 

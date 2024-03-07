@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, lib, ... }:
 
 let 
   inherit (pkgs.stdenv) isLinux;
@@ -15,7 +15,6 @@ in
   [
     fish
     wget
-    starship
     neovim
     neofetch
     tmux
@@ -23,9 +22,12 @@ in
     eza
     git
     fzf
+    fd
     ripgrep
+    jq
     yarn
     go
+    deno
     cargo
     lazygit
   ];
@@ -35,12 +37,18 @@ in
     ".config/nixvim".source = "${homeManagerPath}/nixvim";
     ".config/nvim".source = "${homeManagerPath}/nvim";
     ".config/alacritty".source = "${homeManagerPath}/alacritty.yml";
-    ".config/starship.toml".source = "${homeManagerPath}/starship.toml";
     ".config/fish/config.fish".source = "${homeManagerPath}/config.fish";
+    ".config/fish/bobthefish".source = "${homeManagerPath}/bobthefish";
     ".tmux.conf".source = "${homeManagerPath}/.tmux.conf";
   };
 
   manual.manpages.enable = false;
   programs.home-manager.enable = true;
+  xdg.configFile."fish/conf.d/plugin-bobthefish.fish".text = lib.mkAfter ''
+    for f in $plugin_dir/*.fish
+      source $f
+    end
+    '';
+  home.enableNixpkgsReleaseCheck = false;
 }
 
