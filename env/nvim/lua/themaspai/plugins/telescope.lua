@@ -3,7 +3,7 @@ require 'themaspai.core.global'
 require('telescope').setup {
   defaults = {
     sorting_strategy = "ascending",
-     layout_config = {
+    layout_config = {
       prompt_position = 'top',
     },
     mappings = {
@@ -32,7 +32,7 @@ end, { desc = '[/] Fuzzily search in current buffer' })
 K.set('n', '<leader>gf', require('telescope.builtin').git_files, { desc = 'Search [G]it [F]iles' })
 K.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = '[S]earch [F]iles' })
 K.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = '[S]earch [H]elp' })
-K.set('n', '<leader>st', function ()
+K.set('n', '<leader>st', function()
   require('telescope.builtin').grep_string();
 end, { desc = '[S]earch current [W]ord' })
 K.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = '[S]earch by [G]rep' })
@@ -44,7 +44,7 @@ K.set('n', '<leader>bf', require('telescope.builtin').buffers, { desc = 'Display
 -- dap
 K.set('n', "<leader>do", require('dapui').open, { desc = 'open dapui' })
 K.set('n', "<leader>di", require('dapui').toggle, { desc = 'Toggle dapui' })
-K.set('n', "<leader>dbt", require('dap').toggle_breakpoint, { desc = 'Toggle Breakpoint' })
+K.set('n', "<leader>dt", require('dap').toggle_breakpoint, { desc = 'Toggle Breakpoint' })
 
 K.set('n', "<leader>dsc", require('dap').continue, { desc = 'Dap Continue' })
 K.set('n', "<leader>dsv", require('dap').step_over, { desc = 'Dap Step Over' })

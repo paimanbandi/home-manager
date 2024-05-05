@@ -1,0 +1,1 @@
+C 'colorscheme flexoki-dark'

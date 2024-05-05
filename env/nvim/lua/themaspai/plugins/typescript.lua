@@ -1,8 +1,24 @@
 return {
   {
-    'pmzio/typescript-tools.nvim',
-    dependencies = { "nvim-lua/plenary.nvim", "neovim/nvim-lspconfig" },
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim' },
     opts = {},
   },
-  { 'windwp/nvim-ts-autotag' }
+  -- {
+  --   'jellydn/typecheck.nvim',
+  --   dependencies = { 'folke/trouble.nvim', dependencies = { 'nvim-tree/nvim-web-devicons' } },
+  --   ft = { 'javascript', 'javascriptreact', 'json', 'jsonc', 'typescript', 'typescriptreact' },
+  --   opts = {
+  --     debug = true,
+  --     mode = 'trouble', -- "quickfix" | "trouble"
+  --   },
+  --   keys = {
+  --     {
+  --       '<leader>ck',
+  --       '<cmd>Typecheck<cr>',
+  --       desc = 'Run Type Check',
+  --     },
+  --   },
+  -- },
+  { 'windwp/nvim-ts-autotag' },
 }

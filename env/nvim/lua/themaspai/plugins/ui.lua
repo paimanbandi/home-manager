@@ -1,34 +1,10 @@
-local r = require
-r 'themaspai.core.global'
-
-local lazypath = F.stdpath 'data' .. '/lazy/lazy.nvim'
-if not LO.fs_stat(lazypath) then
-  F.system {
-    'git',
-    'clone',
-    '--filter=blob:none',
-    'https://github.com/folke/lazy.nvim.git',
-    '--branch=stable',
-    lazypath,
-  }
-end
-OO.rtp:prepend(lazypath)
-
-r('lazy').setup({
-  { 'catppuccin/nvim',          name = 'catppuccin', priority = 1000 },
-
-  r 'themaspai.plugins.typescript',
-  r 'themaspai.plugins.flutter',
-  r 'themaspai.plugins.go',
-  -- r 'themaspai.plugins.deno',
-  r 'themaspai.plugins.git',
-  r 'themaspai.plugins.dap',
+return {
   {
     'neovim/nvim-lspconfig',
     dependencies = {
       {
         'williamboman/mason.nvim',
-        config = false,
+        config = true,
         opts = {
           ensure_installed = {
             'eslint-lsp',
@@ -242,4 +218,4 @@ r('lazy').setup({
     config = false,
     event = 'VeryLazy',
   },
-}, {})
+}

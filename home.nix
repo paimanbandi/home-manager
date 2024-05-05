@@ -28,8 +28,12 @@ in
     yarn
     go
     deno
+    dotnet-sdk_7
+    mono
+    ruby
     cargo
     lazygit
+    watchman
   ];
 
   home.file = {

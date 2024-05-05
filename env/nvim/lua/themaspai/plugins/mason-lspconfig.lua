@@ -17,19 +17,19 @@ local on_attach = function(_, bufnr)
 
   -- nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   -- dap
-  nmap("<F5>", ":lua require('dap').toggle_breakpoint()<CR>", 'samain aja dulu')
-  nmap("<F9>", ":lua require('dap').continue()<CR>", 'samain aja dulu')
+  nmap('<F5>', ":lua require('dap').toggle_breakpoint()<CR>", 'samain aja dulu')
+  nmap('<F9>', ":lua require('dap').continue()<CR>", 'samain aja dulu')
 
-  nmap("<F1>", ":lua require('dap').step_over()<CR>", 'samain aja dulu')
-  nmap("<F2>", ":lua require('dap').step_into()<CR>", 'samain aja dulu')
-  nmap("<F3>", ":lua require('dap').step_out()<CR>", 'samain aja dulu')
+  nmap('<F1>', ":lua require('dap').step_over()<CR>", 'samain aja dulu')
+  nmap('<F2>', ":lua require('dap').step_into()<CR>", 'samain aja dulu')
+  nmap('<F3>', ":lua require('dap').step_out()<CR>", 'samain aja dulu')
 
-  nmap("<Leader>dsc", ":lua require('dap').continue()<CR>", 'samain aja dulu')
-  nmap("<Leader>dsv", ":lua require('dap').step_over()<CR>", 'samain aja dulu')
-  nmap("<Leader>dsi", ":lua require('dap').step_into()<CR>", 'samain aja dulu')
-  nmap("<Leader>dso", ":lua require('dap').step_out()<CR>", 'samain aja dulu')
+  nmap('<Leader>dsc', ":lua require('dap').continue()<CR>", 'samain aja dulu')
+  nmap('<Leader>dsv', ":lua require('dap').step_over()<CR>", 'samain aja dulu')
+  nmap('<Leader>dsi', ":lua require('dap').step_into()<CR>", 'samain aja dulu')
+  nmap('<Leader>dso', ":lua require('dap').step_out()<CR>", 'samain aja dulu')
 
-  nmap("<Leader>dhh", ":lua require('dap.ui.variables').hover()<CR>", 'samain aja dulu')
+  nmap('<Leader>dhh', ":lua require('dap.ui.variables').hover()<CR>", 'samain aja dulu')
 
   nmap('<leader>rn', vim.lsp.buf.rename, '[R]e[n]ame')
   nmap('<leader>ds', require('telescope.builtin').lsp_document_symbols, '[D]ocument [S]ymbols')
@@ -73,6 +73,15 @@ local servers = {
       telemetry = { enable = false },
     },
   },
+
+  -- denols = function(opts)
+  --   opts.root_dir = require('lspconfig.util').root_pattern('deno.json', 'deno.jsonc')
+  --   return opts
+  -- end,
+  -- tsserver = function(opts)
+  --   opts.root_dir = require('lspconfig.util').root_pattern 'package.json'
+  --   return opts
+  -- end,
 }
 
 -- Setup neovim lua configuration
@@ -89,13 +98,16 @@ mason_lspconfig.setup {
   ensure_installed = T(servers),
 }
 
-mason_lspconfig.setup_handlers {
-  function(server_name)
-    require('lspconfig')[server_name].setup {
-      capabilities = capabilities,
-      on_attach = on_attach,
-      settings = servers[server_name],
-      filetypes = (servers[server_name] or {}).filetypes,
-    }
-  end
-}
+
+--
+-- mason_lspconfig.setup_handlers {
+--   function(server_name)
+--
+--     require('lspconfig')[server_name].setup {
+--       capabilities = capabilities,
+--       on_attach = on_attach,
+--       settings = servers[server_name],
+--       filetypes = (servers[server_name] or {}).filetypes,
+--     }
+--   end,
+-- }

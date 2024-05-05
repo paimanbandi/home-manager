@@ -1,3 +1,3 @@
 require('anyline').setup({
-  indent_char = '┆' -- ¦, ┆, │, ⎸, or ▏
+  indent_char = G.indentLine_char
 })

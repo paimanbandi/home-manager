@@ -55,7 +55,7 @@ export DENO_INSTALL=$HOME/.deno
 export MONGO_HOME=/usr/local/opt/mongodb-community@5.0
 # export PATH=$PATH:$FLUTTER_HOME/bin:$GCLOUD_HOME/bin:$JAVA_HOME/bin:$GOBIN:$DENO_INSTALL/bin:$MONGO_HOME/bin:$HOME/.nix-profile/bin:/nix/var/nix/profiles/default/bin
 
-set -gx PATH $PATH $FLUTTER_HOME/bin $GCLOUD_HOME/bin $JAVA_HOME/bin $GOBIN $DENO_INSTALL/bin $MONGO_HOME/bin $HOME/.nix-profile/bin /nix/var/nix/profiles/default/bin
+set -gx PATH $PATH $FLUTTER_HOME/bin $GCLOUD_HOME/bin $JAVA_HOME/bin $GOBIN $HOME/.nix-profile/bin /nix/var/nix/profiles/default/bin $HOME/.local/bin
 
 export EDITOR='nvim'
 export NIXPKGS_ALLOW_INSECURE=1
@@ -87,6 +87,8 @@ alias fps='cd $HOME/Projects/Personal/flutter/sharing-session'
 alias c=clear
 alias x='exit'
 alias ll='eza -la'
+
+alias python=python3
 
 # neovim
 #alias nvim='$HOME/.config/nixvim/result/bin/nvim'

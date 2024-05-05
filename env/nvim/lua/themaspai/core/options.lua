@@ -1,5 +1,9 @@
 require 'themaspai.core.global'
-G.indentLine_char = '¦'
+
+G.indentLine_char = '¦' -- ¦, ┆, │, ⎸, or ▏
+
+O.wrap = true
+O.textwidth = 80
 
 O.tabstop = 2
 O.shiftwidth = 2
@@ -30,8 +34,8 @@ O.number = true
 O.signcolumn = 'yes'
 O.scrolloff = 8
 
-C.highlight({ "Normal", "guibg=NONE" })
-C.highlight({ "Normal", "ctermbg=NONE" })
+C.highlight { 'Normal', 'guibg=NONE' }
+C.highlight { 'Normal', 'ctermbg=NONE' }
 
 local highlight_group = A.nvim_create_augroup('YankHighlight', { clear = true })
 A.nvim_create_autocmd('TextYankPost', {
